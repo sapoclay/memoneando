@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Memoneando
+Comment=Editor de memes profesional para crear contenido divertido
+Comment[en]=Professional meme editor for creating fun content
+Exec=memoneando
+Icon=memoneando
+Terminal=false
+Categories=Graphics;Photography;Qt;
+Keywords=meme;editor;social;image;funny;graphics;
+StartupNotify=true
+StartupWMClass=Memoneando

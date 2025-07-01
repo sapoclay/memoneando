@@ -1,0 +1,9 @@
+/var/www/html/C++/memes/build/CMakeFiles/Memoneando.dir
+/var/www/html/C++/memes/build/CMakeFiles/edit_cache.dir
+/var/www/html/C++/memes/build/CMakeFiles/rebuild_cache.dir
+/var/www/html/C++/memes/build/CMakeFiles/list_install_components.dir
+/var/www/html/C++/memes/build/CMakeFiles/install.dir
+/var/www/html/C++/memes/build/CMakeFiles/install/local.dir
+/var/www/html/C++/memes/build/CMakeFiles/install/strip.dir
+/var/www/html/C++/memes/build/CMakeFiles/Memoneando_autogen_timestamp_deps.dir
+/var/www/html/C++/memes/build/CMakeFiles/Memoneando_autogen.dir
