@@ -134,6 +134,8 @@ memoneando
 # O encontrarlo en el menú de aplicaciones → Gráficos → Memoneando
 ```
 
+![lanzador-memoneando](https://github.com/user-attachments/assets/68823619-74d7-48eb-99f2-83175c6b58d7)
+
 **Desinstalar:**
 ```bash
 sudo dpkg -r memoneando
@@ -234,6 +236,8 @@ echo "TU_ACCESS_KEY_AQUI" > ~/.config/Memoneando/unsplash_api_key.txt
 echo "TU_API_KEY_AQUI" > ~/.config/Memoneando/pexels_api_key.txt
 ```
 
+![config-apikeys](https://github.com/user-attachments/assets/168bf5dc-6a2f-4611-994f-46b7f1cdafec)
+
 #### Proveedores sin API key requerida
 - **Pixabay:** Funciona inmediatamente sin configuración
 - **Wikimedia Commons:** Acceso libre a contenido de dominio público
@@ -292,6 +296,9 @@ echo "TU_API_KEY_AQUI" > ~/.config/Memoneando/pexels_api_key.txt
    - Hacer clic en "Aplicar" para confirmar
 
 #### 6. **Buscar imágenes gratuitas online:**
+
+![busqueda-imagenes](https://github.com/user-attachments/assets/e5fdf301-938a-4910-83e6-3a541eb8f786)
+
    - **Abrir buscador** múltiples formas:
      - **Botón "Web" en panel de capas** (más visible y accesible)
      - **Botón "Web" en barra de herramientas**
@@ -397,6 +404,8 @@ La aplicación incluye un icono en la bandeja del sistema que permite:
 - **Cierre suave** de la aplicación sin perder trabajo
 
 ## 📁 Estructura del proyecto
+
+![memoneando-funcionando](https://github.com/user-attachments/assets/66e495ce-3158-40f6-8a5c-3eb9d24a8259)
 
 ```
 memoneando/
