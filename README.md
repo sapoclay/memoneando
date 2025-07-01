@@ -1,13 +1,13 @@
-# Memoneando - Editor de Contenido Visual Avanzado
+# Memoneando - Editor para mis mierdas
 
 ![Memoneando Logo](img/logo.png)
 
-**Memoneando** es un editor de contenido visual gratuito y de código abierto, diseñado para crear memes, contenido para redes sociales y material gráfico de forma rápida e intuitiva. Desarrollado en C++ con Qt Framework.
+**Memoneando** es un editor de contenido visual gratuito y de código abierto, diseñado para crear memes de forma rápida y sin complicaciones. Desarrollado en C++ con Qt Framework.
 
-## 🚀 Características principales
+## Características principales
 
 ### 🎨 Edición avanzada de contenido visual
-- **Sistema de capas profesional** con reordenamiento visual completo (drag & drop)
+- **Sistema de capas** con reordenamiento visual completo (drag & drop)
 - **Selección múltiple de capas** con Ctrl+Click y Shift+Click para operaciones en lote
 - **Modos de mezcla funcionales** (Normal, Multiplicar, Pantalla, Superposición, Luz suave, Luz fuerte)
 - **Reordenamiento de capas** con botones ↑/↓ y drag & drop que refleja el Z-order en tiempo real
@@ -192,21 +192,21 @@ Si quieres crear el paquete .deb desde el código fuente:
 # Compilar y crear el paquete .deb
 ./build_deb.sh
 
-# Esto generará: memoneando_1.0.3_amd64.deb
+# Esto generará: memoneando_1.0.8_amd64.deb
 # Luego puedes instalarlo con:
-sudo dpkg -i memoneando_1.0.3_amd64.deb
+sudo dpkg -i memoneando_1.0.8_amd64.deb
 ```
 
 ## ⚙️ Configuración avanzada
 
 ### 🔑 Configuración de API Keys para buscadores de imágenes
 
-Para aprovechar al máximo el buscador de imágenes, puedes configurar API keys gratuitas para acceder a más proveedores. **¡Ahora puedes configurarlas directamente desde la interfaz!**
+Puedes configurar API keys gratuitas para acceder a los proveedores de imágenes
 
 #### Configuración desde la interfaz (NUEVO - Recomendado)
 1. **Abrir configuración:** Ve al menú `Archivo` → `Configuración` o presiona `Ctrl+,`
 2. **Pestaña API Keys:** Selecciona la pestaña "API Keys"
-3. **Introducir claves:** Ingresa tus API keys en los campos correspondientes:
+3. **Introducir claves:** Escribe tus API keys en los campos correspondientes:
    - **Unsplash Access Key:** Para fotografías profesionales
    - **Pexels API Key:** Para variedad de contenido
 4. **Guardar:** Haz clic en "Aplicar" para guardar la configuración
@@ -255,28 +255,9 @@ echo "TU_API_KEY_AQUI" > ~/.config/Memoneando/pexels_api_key.txt
 - **Almacenamiento:** 50 MB espacio libre
 - **Conexión a internet:** Opcional, requerida solo para el buscador de imágenes gratuitas
 
-## 🎮 Uso de la aplicación
+## Uso de la aplicación
 
-### Iniciar la aplicación
-
-**Si instalaste desde .deb:**
-```bash
-# Desde terminal
-memoneando
-
-# O desde el menú de aplicaciones: Gráficos → Memoneando
-```
-
-**Si compilaste desde código fuente:**
-```bash
-# Usar script recomendado
-./run_memoneando_clean.sh
-
-# O ejecutar directamente
-./build/bin/Memoneando
-```
-
-### 🎨 Funciones principales
+### 🎮 Funciones principales
 
 #### 1. **Crear un nuevo meme:**
    - `Archivo → Nuevo` o `Ctrl+N`
@@ -351,8 +332,8 @@ memoneando
 - `F11` - Pantalla completa
 
 #### Navegación
-- `Ctrl+Mouse Wheel` - Zoom in/out
-- `Middle Click + Drag` - Navegar canvas
+- `Ctrl+Rueda del ratón` - Zoom in/out
+- `Clic central + Arrastrar` - Navegar canvas
 - `Ctrl+0` - Ajustar zoom al tamaño de ventana
 
 #### Edición
@@ -419,42 +400,45 @@ La aplicación incluye un icono en la bandeja del sistema que permite:
 
 ```
 memoneando/
-├── src/                     # Código fuente principal
-│   ├── main.cpp            # Punto de entrada de la aplicación
-│   ├── mainwindow.h/cpp    # Ventana principal con UI completa
-│   ├── memecanvas.h/cpp    # Canvas de edición con sistema de capas
-│   ├── layeritem.h/cpp     # Elementos de capa con modos de mezcla
-│   ├── settingsdialog.h/cpp # Diálogo de configuración
-│   ├── systemtrayicon.h/cpp # Bandeja del sistema
-│   ├── imagedownloader.h/cpp # Descarga de imágenes genérica
-│   ├── imagesearchwidget.h/cpp # UI del buscador con múltiples proveedores
-│   ├── imageprovider.h/cpp # Clase base para proveedores de imágenes
-│   ├── pixabayprovider.h/cpp # Proveedor Pixabay
-│   ├── unsplashprovider.h/cpp # Proveedor Unsplash
-│   ├── pexelsprovider.h/cpp # Proveedor Pexels
-│   ├── wikimediaprovider.h/cpp # Proveedor Wikimedia Commons
-│   └── lorempicsumprovider.h/cpp # Proveedor Lorem Picsum
-├── resources/              # Recursos de la aplicación
-│   └── resources.qrc      # Archivo de recursos Qt
-├── img/                   # Imágenes del proyecto
-│   └── logo.png          # Logo oficial de Memoneando
-├── debian-package/        # Estructura del paquete .deb
-│   ├── DEBIAN/           # Scripts de control del paquete
-│   └── usr/              # Archivos de instalación
-├── build/                 # Directorio de compilación (generado)
-├── CMakeLists.txt        # Configuración de compilación CMake
-├── memoneando.desktop    # Archivo de integración de escritorio
-├── memoneando-wrapper.sh # Script wrapper para evitar conflictos snap
-├── build.sh              # Script de compilación automatizada
-├── build_deb.sh          # Script para crear paquete .deb
-├── diagnostico.sh        # Script de diagnóstico del sistema
-├── run_memoneando_clean.sh # Script de ejecución recomendado
-├── run_simple.sh         # Script de ejecución simple
-├── install.sh            # Script de instalación manual
-├── uninstall.sh          # Script de desinstalación manual
-├── FUNCION_COLOR_TEXTO.md # Documentación técnica del cambio de color
-├── FUNCION_SELECCION_MULTIPLE.md # Documentación técnica selección múltiple
-└── README.md             # Este archivo de documentación
+├── src/                          # Código fuente principal
+│   ├── main.cpp                  # Punto de entrada de la aplicación
+│   ├── mainwindow.h/cpp          # Ventana principal con UI completa
+│   ├── memecanvas.h/cpp          # Canvas de edición con sistema de capas
+│   ├── layeritem.h/cpp           # Elementos de capa con modos de mezcla
+│   ├── settingsdialog.h/cpp      # Diálogo de configuración
+│   ├── systemtrayicon.h/cpp      # Bandeja del sistema
+│   ├── imagedownloader.h/cpp     # Descarga de imágenes genérica
+│   ├── imagedownloader_new.cpp   # Versión mejorada del descargador
+│   ├── imagesearchwidget.h/cpp   # UI del buscador con múltiples proveedores
+│   ├── imagesearchwidget_fixed.h # Versión corregida del buscador
+│   ├── imageprovider.h/cpp       # Clase base para proveedores de imágenes
+│   ├── pixabayprovider.h/cpp     # Proveedor Pixabay (sin API key)
+│   ├── unsplashprovider.h/cpp    # Proveedor Unsplash (requiere API key)
+│   ├── pexelsprovider.h/cpp      # Proveedor Pexels (requiere API key)
+│   ├── wikimediaprovider.h/cpp   # Proveedor Wikimedia Commons
+│   ├── lorempicsumprovider.h/cpp # Proveedor Lorem Picsum
+│   └── colorpickerwidget.h/cpp   # Widget selector de color para eliminar fondos
+├── resources/                    # Recursos de la aplicación
+│   └── resources.qrc             # Archivo de recursos Qt
+├── img/                          # Imágenes del proyecto
+│   └── logo.png                  # Logo oficial de Memoneando
+├── debian-package/               # Estructura del paquete .deb
+│   ├── DEBIAN/                   # Archivos de control del paquete
+│   ├── usr/                      # Archivos de instalación del sistema
+│   └── memoneando_1.0.8_amd64.deb # Paquete .deb generado
+├── build/                        # Directorio de compilación (generado)
+│   ├── bin/                      # Ejecutables compilados
+│   └── ...                       # Archivos de compilación CMake
+├── .git/                         # Control de versiones Git
+├── .gitignore                    # Archivos ignorados por Git
+├── CMakeLists.txt                # Configuración de compilación CMake
+├── LICENSE                       # Licencia del proyecto
+├── memoneando.desktop            # Archivo de integración de escritorio
+├── memoneando-wrapper.sh         # Script wrapper para evitar conflictos snap
+├── build.sh                      # Script de compilación automatizada
+├── build_deb.sh                  # Script para crear paquete .deb
+├── run_memoneando_clean.sh       # Script de ejecución recomendado
+└── README.md                     # Este archivo de documentación
 ```
 
 ## 🔧 Desarrollo y contribución
@@ -604,294 +588,8 @@ Para reportar errores o problemas:
 4. **Adjuntar capturas** de pantalla si es necesario
 5. **Incluir logs** si hay errores en consola
 
-### Solicitar características
-Para pedir nuevas funcionalidades:
-1. Crear un **Feature Request** en Issues
-2. **Describir detalladamente** la funcionalidad deseada
-3. **Explicar el caso de uso** y beneficios
-4. **Proponer implementación** si tienes ideas técnicas
-
-### Obtener ayuda
-- **GitHub Issues** para problemas técnicos
-- **Documentación** en este README
-- **Código fuente** bien comentado para entender funcionamiento
-
-## 🔗 Enlaces útiles
-
-- **Repositorio:** https://github.com/sapoclay/memoneando
-- **Releases:** https://github.com/sapoclay/memoneando/releases
-- **Issues:** https://github.com/sapoclay/memoneando/issues
-- **Qt Documentation:** https://doc.qt.io/qt-6/
-- **CMake Documentation:** https://cmake.org/documentation/
-
-## 🎯 Roadmap (próximas versiones)
-
-### Versión 1.0.x (completada) ✅
-- [x] Sistema de capas con reordenamiento visual
-- [x] Selección múltiple de capas con operaciones en lote
-- [x] Cambio de color de texto desde menú contextual
-- [x] Buscador de imágenes gratuitas integrado con múltiples proveedores:
-  - [x] Pixabay (gratuito, sin API key)
-  - [x] Unsplash (requiere API key gratuita)
-  - [x] Pexels (requiere API key gratuita)
-  - [x] Wikimedia Commons (gratuito, dominio público)
-  - [x] Lorem Picsum (placeholder para desarrollo)
-- [x] Selector de proveedor en interfaz de búsqueda
-- [x] **Configuración GUI para API Keys**: Nueva pestaña en diálogo de configuración
-  - [x] Campos dedicados para Unsplash y Pexels API keys
-  - [x] Botones de prueba para verificar claves
-  - [x] Almacenamiento automático en QSettings
-  - [x] Validación de disponibilidad de proveedores
-- [x] Empaquetado .deb profesional con wrapper anti-snap
-- [x] Documentación completa y scripts de diagnóstico
-- [x] **Corrección**: Menú contextual funciona correctamente (añadir imagen vs añadir texto)
-- [x] **Corrección**: Eliminación completa de capas (incluyendo todas las capas)
-- [x] **Corrección**: Segfault al abrir buscador de imágenes (setupUI antes de setupProviders)
-- [x] **Corrección**: Exportación de imágenes mejorada (evita errores ICC profile)
-- [x] **Mejora**: Buscador de imágenes visible desde múltiples ubicaciones
-- [x] **Mejora**: Tecla Delete funciona para eliminar capas seleccionadas
-- [x] **Mejora**: Ventana de búsqueda independiente y bien posicionada
-- [x] **Mejora**: Iconos de texto compatibles con todos los sistemas
-- [x] **Mejora UI**: Botones de capas con iconos descriptivos (T🖼️🌐🗑️) para mejor legibilidad
-- [x] **Arquitectura extensible**: Sistema de proveedores de imágenes modular
-
-### Versión 1.1.0 (planificada)
-- [ ] Sistema de deshacer/rehacer (Ctrl+Z/Ctrl+Y)
-- [ ] Filtros y efectos adicionales para capas
-- [ ] Soporte para GIFs animados
-- [ ] Plantillas predefinidas para redes sociales
-- [ ] Búsquedas combinadas (múltiples proveedores simultáneamente)
-- [ ] Más proveedores de imágenes gratuitas (Freepik, Burst, etc.)
-- [ ] Caché local de imágenes buscadas para uso offline
-
-### Versión 1.2.0 (planificada)
-- [ ] Herramientas de dibujo básicas (formas, líneas)
-- [ ] Sistema de plugins para extensiones de terceros
-- [ ] Soporte para más formatos de imagen y video
-- [ ] Colaboración básica (compartir proyectos)
-- [ ] Modo offline para el buscador (caché local)
-
-### Contribuciones bienvenidas
-Si quieres trabajar en alguna de estas características o proponer nuevas, ¡créa un Issue para coordinar!
-
 ---
 
-**🎉 ¡Disfruta creando contenido visual increíble con Memoneando!**
+**🎉 ¡Disfruta creando contenido visual con Memoneando!**
 
 *Un editor hecho por creadores, para creadores. 100% libre y de código abierto.*
-
-## 📦 Paquete .deb - Instalación para Ubuntu/Debian
-
-### Información del paquete
-
-- **Nombre:** memoneando
-- **Versión:** 1.0.3
-- **Arquitectura:** amd64 (Intel/AMD 64-bit)
-- **Tamaño:** ~2 MB
-- **Dependencias:** Qt6 y bibliotecas del sistema
-- **Compatibilidad:** Evita conflictos con bibliotecas snap automáticamente
-
-### Instalación rápida
-
-```bash
-# Instalar el paquete .deb
-sudo dpkg -i memoneando_1.0.1_amd64.deb
-
-# Si hay dependencias faltantes:
-sudo apt-get install -f
-
-# Verificar instalación
-dpkg -l | grep memoneando
-
-# Ejecutar
-memoneando
-```
-
-### Desinstalación
-
-```bash
-# Desinstalar completamente
-sudo dpkg -r memoneando
-
-# Verificar que se desinstaló
-dpkg -l | grep memoneando  # No debería mostrar nada
-```
-
-### Integración del sistema
-
-Una vez instalado, Memoneando se integra completamente en Ubuntu:
-
-- **Menú de aplicaciones:** Gráficos → Memoneando
-- **Comando terminal:** `memoneando`
-- **Icono en el escritorio:** Disponible en el menú
-- **Asociación de archivos:** Se puede configurar para abrir imágenes
-- **Actualizaciones automáticas:** Compatible con el sistema de paquetes
-
-### Scripts incluidos
-
-#### `build_deb.sh` - Crear paquete .deb
-```bash
-./build_deb.sh
-# Compila el proyecto y crea memoneando_1.0.1_amd64.deb
-```
-
-#### `test_deb.sh` - Probar paquete
-```bash
-./test_deb.sh
-# Verifica el contenido del paquete y ofrece instalarlo
-```
-
-### Estructura del paquete
-
-```
-memoneando_1.0.1_amd64.deb
-├── usr/bin/memoneando                    # Ejecutable principal (wrapper)
-├── usr/bin/memoneando-bin               # Binario real de la aplicación
-├── usr/share/applications/              # Integración escritorio
-│   └── memoneando.desktop
-├── usr/share/icons/hicolor/48x48/apps/  # Icono de la aplicación
-│   └── memoneando.png
-└── usr/share/doc/memoneando/            # Documentación
-    └── README.md
-```
-
-### Dependencias del paquete
-
-El paquete .deb incluye las siguientes dependencias automáticas:
-
-```
-qt6-base-dev      # Desarrollo Qt6 base
-qt6-tools-dev     # Herramientas Qt6
-libqt6core6       # Biblioteca Qt6 Core
-libqt6widgets6    # Biblioteca Qt6 Widgets
-libqt6gui6        # Biblioteca Qt6 GUI
-libqt6network6    # Biblioteca Qt6 Network (para buscador de imágenes)
-```
-
-### Distribución y compartir
-
-#### Para desarrolladores:
-```bash
-# Crear paquete para distribución
-./build_deb.sh
-
-# Subir a releases de GitHub
-# Compartir memoneando_1.0.0_amd64.deb
-```
-
-#### Para usuarios finales:
-```bash
-# Descargar desde releases
-wget https://github.com/sapoclay/memoneando/releases/download/v1.0.1/memoneando_1.0.1_amd64.deb
-
-# Instalar directamente
-sudo dpkg -i memoneando_1.0.1_amd64.deb
-sudo apt-get install -f
-```
-
-### Solución de problemas comunes
-
-#### Error de bibliotecas snap
-Si al ejecutar `memoneando` aparece el error:
-```
-memoneando: symbol lookup error: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined symbol: __libc_pthread_init, version GLIBC_PRIVATE
-```
-
-**Solución:** El paquete .deb v1.0.1+ incluye un wrapper automático que resuelve este conflicto. Si tienes una versión anterior:
-
-```bash
-# Actualizar a la versión más reciente
-sudo dpkg -r memoneando
-wget https://github.com/sapoclay/memoneando/releases/download/v1.0.1/memoneando_1.0.1_amd64.deb
-sudo dpkg -i memoneando_1.0.1_amd64.deb
-```
-
-#### Error de dependencias
-```bash
-# Si dpkg falla por dependencias:
-sudo apt-get update
-sudo apt-get install -f
-
-# O instalar dependencias manualmente:
-sudo apt install qt6-base-dev qt6-tools-dev libqt6core6 libqt6widgets6 libqt6gui6
-```
-
-#### Error de permisos
-```bash
-# Asegurar permisos correctos:
-chmod +x memoneando_1.0.1_amd64.deb
-sudo dpkg -i memoneando_1.0.1_amd64.deb
-```
-
-#### Verificar instalación
-```bash
-# Comprobar archivos instalados:
-dpkg -L memoneando
-
-# Comprobar estado del paquete:
-dpkg -s memoneando
-
-# Probar ejecución:
-which memoneando
-memoneando --version  # (si se implementa)
-```
-
-#### Script de diagnóstico
-El proyecto incluye un script de diagnóstico para ayudar a resolver problemas de entorno:
-
-```bash
-# Ejecutar diagnóstico completo del sistema
-./diagnostico.sh
-```
-
-Este script verifica:
-- Versiones de Qt6 instaladas
-- Dependencias del sistema
-- Conflictos con bibliotecas snap
-- Variables de entorno problemáticas
-- Estado de la instalación de Memoneando
-- Permisos de archivos
-
-**Usar el diagnóstico cuando:**
-- La aplicación no se ejecuta correctamente
-- Aparecen errores de bibliotecas
-- Hay problemas después de la instalación
-- Necesitas información del sistema para reportar un bug
-
-### Problemas conocidos y solucionados
-
-#### ✅ **Menú contextual arreglado (v1.0.1+)**
-- **Problema anterior**: "Añadir imagen" del menú contextual creaba texto en lugar de abrir diálogo de imagen
-- **Solución**: Corregidas las conexiones de señales y métodos de callback
-- **Estado**: ✅ Solucionado en la versión actual
-
-#### ✅ **Eliminación completa de capas (v1.0.1+)**
-- **Problema anterior**: No se podía eliminar la última capa, siempre quedaba una capa imposible de eliminar
-- **Solución**: Removida la restricción artificial, ahora se pueden eliminar todas las capas
-- **Funcionalidad añadida**: Tecla `Delete` funciona para eliminar capas seleccionadas
-- **Estado**: ✅ Solucionado en la versión actual
-
-#### ✅ **Visibilidad del buscador de imágenes (v1.0.1+)**
-- **Problema anterior**: La función de búsqueda de imágenes no era fácil de encontrar
-- **Solución**: Añadido acceso desde múltiples ubicaciones:
-  - Panel de capas: Botón "Web" prominente
-  - Barra de herramientas: Botón "Web"
-  - Menú contextual: "Buscar imágenes web"
-  - Menú principal: Herramientas → Buscar imágenes online
-- **Estado**: ✅ Solucionado en la versión actual
-
-#### ✅ **Ventana de búsqueda mejorada (v1.0.1+)**
-- **Problema anterior**: La ventana de búsqueda se superponía con la ventana principal
-- **Solución**: 
-  - Ventana independiente con tamaño adecuado (900x700)
-  - Centrado automático en pantalla
-  - Sin modalidad para permitir uso simultáneo
-  - Título descriptivo mejorado
-- **Estado**: ✅ Solucionado en la versión actual
-
-#### ✅ **Iconos compatibles (v1.0.1+)**
-- **Problema anterior**: Los emojis en botones no se mostraban en algunos sistemas
-- **Solución**: Reemplazados emojis por texto claro y tooltips descriptivos
-- **Estado**: ✅ Solucionado en la versión actual
-
----
